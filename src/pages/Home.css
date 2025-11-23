@@ -1,0 +1,211 @@
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 102, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 102, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
+  z-index: -1;
+}
+
+.hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 102, 0, 0.03) 2px, rgba(255, 102, 0, 0.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 102, 0, 0.03) 2px, rgba(255, 102, 0, 0.03) 4px);
+  opacity: 0.5;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.hero-highlight {
+  color: var(--primary-orange);
+  display: block;
+  margin-top: 10px;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Features Section */
+.features-section {
+  background: var(--primary-black);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-orange);
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  color: var(--text-white);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.feature-description {
+  color: var(--light-gray);
+  line-height: 1.7;
+}
+
+/* Grades Section */
+.grades-section {
+  background: var(--secondary-black);
+}
+
+.grades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.grade-card {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.grade-number {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(255, 102, 0, 0.1);
+  line-height: 1;
+}
+
+.grade-title {
+  font-size: 1.8rem;
+  color: var(--primary-orange);
+  margin-bottom: 15px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.grade-description {
+  color: var(--light-gray);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0.05) 100%);
+  border-top: 2px solid var(--dark-gray);
+  border-bottom: 2px solid var(--dark-gray);
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 35px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .features-grid,
+  .grades-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-description {
+    font-size: 1.1rem;
+  }
+}
