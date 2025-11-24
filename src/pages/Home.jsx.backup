@@ -1,48 +1,8 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { FaGraduationCap, FaBook, FaTrophy, FaUsers, FaChalkboardTeacher, FaClock, FaTimes, FaChevronLeft, FaChevronRight, FaCalendar, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaGraduationCap, FaBook, FaTrophy, FaUsers, FaChalkboardTeacher, FaClock } from 'react-icons/fa'
 import './Home.css'
 
 function Home() {
-    const [selectedProject, setSelectedProject] = useState(null)
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-    const openModal = (project) => {
-        setSelectedProject(project)
-        setCurrentImageIndex(0)
-    }
-
-    const closeModal = () => {
-        setSelectedProject(null)
-        setCurrentImageIndex(0)
-    }
-
-    const nextImage = () => {
-        if (selectedProject) {
-            setCurrentImageIndex((prev) =>
-                prev === selectedProject.images.length - 1 ? 0 : prev + 1
-            )
-        }
-    }
-
-    const prevImage = () => {
-        if (selectedProject) {
-            setCurrentImageIndex((prev) =>
-                prev === 0 ? selectedProject.images.length - 1 : prev - 1
-            )
-        }
-    }
-
-    // Auto-advance slideshow every 4 seconds
-    useEffect(() => {
-        if (selectedProject && selectedProject.images.length > 1) {
-            const interval = setInterval(() => {
-                nextImage()
-            }, 4000)
-
-            return () => clearInterval(interval)
-        }
-    }, [selectedProject, currentImageIndex])
     const features = [
         {
             icon: <FaGraduationCap />,
@@ -84,38 +44,23 @@ function Home() {
 
     const projects = [
         {
-            title: 'O/L Mathematics Paper Discussion Seminar',
+            title: 'Mathematics Workshop 2024',
             description: 'Conducted a comprehensive mathematics workshop for O/L students focusing on problem-solving techniques and exam preparation strategies.',
-            image: '/images/seminar1.jpeg',
-            type: 'Seminar - Volunteering',
-            date: 'November, 2025',
-            place: 'Magammana maha Vidyalaya, Homagama',
-            fullDescription: 'Collaborating with the Exploration Club of University of Colombo School of Computing, conducted a full-day comprehensive mathematics workshop designed specifically for O/L students in Grade 10 & 11 of Magammana Maha Vidyalaya, Homagama for preparing for their final examinations & term tests. The workshop covered advanced problem-solving techniques, time management strategies, and exam preparation tips with past papers discussion. Over 45 students participated and benefited from interactive sessions, practice problems, and one-on-one guidance from experienced mathematics educators.',
-            images: [
-                '/images/seminar1.jpeg',
-                '/images/seminar1-2.jpeg',
-                '/images/seminar1-3.jpeg',
-                '/images/seminar1-4.jpeg',
-                '/images/seminar1-5.jpeg'
-            ]
+            image: '/images/seminar1.jpg',
+            type: 'Seminar'
         },
         {
-            title: 'O/L Mathematics Seminar',
-            description: 'Free mathematics seminar series for students in grade 10 & 11 at Deepangoda Sri Medananda College , helping them build strong foundations in mathematics.',
-            image: '/images/seminar2-3.jpeg',
-            type: 'Seminar - Volunteering',
-            date: 'June 10-12, 2024',
-            place: 'Gampaha Rural Schools',
-            fullDescription: 'With the collaboration of The exploration Club of University of Colombo School of Computing, successfully conducted a free mathematics seminar and paper discussion for the students of grade 10 & 11 at Deepangoda Sri Medananda College. The program focused on building strong mathematical foundations, boosting confidence, and making mathematics accessible to all.',
-            images: [
-                '/images/seminar2.jpeg',
-                '/images/seminar2-2.jpeg',
-                '/images/seminar2-3.jpeg',
-                '/images/seminar2-4.jpeg',
-                '/images/seminar2-5.jpeg'
-            ]
+            title: 'Community Volunteering Program',
+            description: 'Free mathematics classes for underprivileged students in rural areas, helping them build strong foundations in mathematics.',
+            image: '/images/volunteer1.jpg',
+            type: 'Volunteering'
         },
-       
+        {
+            title: 'Educational Outreach Initiative',
+            description: 'Organized educational seminars in local schools to promote mathematical thinking and problem-solving skills among young students.',
+            image: '/images/seminar2.jpg',
+            type: 'Seminar'
+        }
     ]
 
     return (
@@ -234,9 +179,6 @@ function Home() {
                                 <div className="project-content">
                                     <h3 className="project-title">{project.title}</h3>
                                     <p className="project-description">{project.description}</p>
-                                    <button className="btn-read-more" onClick={() => openModal(project)}>
-                                        Read More
-                                    </button>
                                 </div>
                             </div>
                         ))}
@@ -244,64 +186,7 @@ function Home() {
                 </div>
             </section>
 
-            {/* Project Modal */}
-            {selectedProject && (
-                <div className="project-modal" onClick={closeModal}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <button className="modal-close" onClick={closeModal}>
-                            <FaTimes />
-                        </button>
-
-                        <div className="modal-body">
-                            <div className="modal-slideshow">
-                                <img
-                                    src={selectedProject.images[currentImageIndex]}
-                                    alt={`${selectedProject.title} - ${currentImageIndex + 1}`}
-                                />
-                                {selectedProject.images.length > 1 && (
-                                    <>
-                                        <button className="slideshow-btn prev-btn" onClick={prevImage}>
-                                            <FaChevronLeft />
-                                        </button>
-                                        <button className="slideshow-btn next-btn" onClick={nextImage}>
-                                            <FaChevronRight />
-                                        </button>
-                                        <div className="slideshow-indicators">
-                                            {selectedProject.images.map((_, idx) => (
-                                                <span
-                                                    key={idx}
-                                                    className={`indicator ${idx === currentImageIndex ? 'active' : ''}`}
-                                                    onClick={() => setCurrentImageIndex(idx)}
-                                                ></span>
-                                            ))}
-                                        </div>
-                                    </>
-                                )}
-                            </div>
-
-                            <div className="modal-details">
-                                <span className="modal-badge">{selectedProject.type}</span>
-                                <h2 className="modal-title">{selectedProject.title}</h2>
-
-                                <div className="modal-meta">
-                                    <div className="meta-item">
-                                        <FaCalendar />
-                                        <span>{selectedProject.date}</span>
-                                    </div>
-                                    <div className="meta-item">
-                                        <FaMapMarkerAlt />
-                                        <span>{selectedProject.place}</span>
-                                    </div>
-                                </div>
-
-                                <p className="modal-description">{selectedProject.fullDescription}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            {/* CTA Section */}
+            {/* CTA Section */
             <section className="section cta-section">
                 <div className="container">
                     <div className="cta-content">

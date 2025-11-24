@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Geometric shapes and patterns -->
+  <defs>
+    <style>
+      .shape { fill: none; stroke: rgba(255, 255, 255, 0.06); stroke-width: 2; }
+      .math-text { fill: rgba(255, 255, 255, 0.07); font-family: Arial, sans-serif; }
+    </style>
+  </defs>
+  
+  <!-- Triangle -->
+  <polygon points="150,100 250,300 50,300" class="shape"/>
+  
+  <!-- Circle -->
+  <circle cx="600" cy="150" r="80" class="shape"/>
+  
+  <!-- Square -->
+  <rect x="350" y="350" width="120" height="120" class="shape"/>
+  
+  <!-- Hexagon -->
+  <polygon points="650,400 700,450 700,520 650,570 600,520 600,450" class="shape"/>
+  
+  <!-- Angle symbol -->
+  <path d="M 100 500 L 200 500 L 200 450" class="shape"/>
+  <text x="150" y="490" class="math-text" font-size="24">90°</text>
+  
+  <!-- Parallel lines -->
+  <line x1="280" y1="100" x2="380" y2="100" class="shape"/>
+  <line x1="280" y1="150" x2="380" y2="150" class="shape"/>
+  
+  <!-- Mathematical symbols -->
+  <text x="400" y="250" class="math-text" font-size="56">∠ ⊥ ∥</text>
+</svg>

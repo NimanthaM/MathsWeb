@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Math equations and formulas background -->
+  <defs>
+    <style>
+      .math-text { fill: rgba(255, 255, 255, 0.08); font-family: 'Times New Roman', serif; font-style: italic; }
+    </style>
+  </defs>
+  
+  <!-- Pythagorean theorem -->
+  <text x="100" y="100" class="math-text" font-size="48">a² + b² = c²</text>
+  
+  <!-- Quadratic formula -->
+  <text x="500" y="150" class="math-text" font-size="36">x = (-b ± √(b²-4ac))/2a</text>
+  
+  <!-- Pi -->
+  <text x="200" y="250" class="math-text" font-size="64">π = 3.14159...</text>
+  
+  <!-- Equation -->
+  <text x="450" y="320" class="math-text" font-size="42">y = mx + c</text>
+  
+  <!-- Trigonometry -->
+  <text x="150" y="400" class="math-text" font-size="38">sin²θ + cos²θ = 1</text>
+  
+  <!-- Euler's identity -->
+  <text x="500" y="480" class="math-text" font-size="40">e^(iπ) + 1 = 0</text>
+  
+  <!-- Integral symbol -->
+  <text x="300" y="550" class="math-text" font-size="52">∫ f(x)dx</text>
+</svg>

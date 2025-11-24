@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6600;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ff8533;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="#1a1a1a"/>
+  <rect width="800" height="400" fill="url(#grad2)"/>
+  
+  <!-- O/L exam elements -->
+  <circle cx="150" cy="100" r="60" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="3"/>
+  <text x="130" y="115" fill="rgba(255,255,255,0.15)" font-size="48" font-weight="bold">A+</text>
+  
+  <rect x="400" y="60" width="300" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" rx="10"/>
+  <text x="420" y="120" fill="rgba(255,255,255,0.12)" font-size="36">Practice Makes Perfect</text>
+  
+  <text x="100" y="250" fill="rgba(255,255,255,0.13)" font-size="42" font-family="serif">Time Management</text>
+  <text x="150" y="320" fill="rgba(255,102,0,0.3)" font-size="58" font-weight="bold">O/L Prep</text>
+</svg>
