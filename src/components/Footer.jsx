@@ -12,7 +12,7 @@ function Footer() {
                     <div className="footer-section">
                         <div className="footer-logo">
                             <img src="/favicon.svg" alt="Logo" className="footer-logo-icon" />
-                            <span className="footer-logo-text"><span className="logo-highlight">A+</span> Maths <span style={{ color: 'var(--light-gray)' }}>with</span> <img src="/images/name.jpg" alt="Nimantha Madhushan" className="name-image" /></span>
+                            <span className="footer-logo-text"><span className="logo-highlight">A+</span> <span style={{ color: 'var(--primary-orange)' }}>Maths</span> <span style={{ color: 'var(--light-gray)' }}>with</span> <img src="/images/name.jpg" alt="Nimantha Madhushan" className="name-image" /></span>
                         </div>
                         <p className="footer-description">
                             Professional mathematics tutoring for grades 6-11 (O/L).

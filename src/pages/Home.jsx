@@ -164,7 +164,7 @@ function Home() {
                                 e.preventDefault();
                                 const message = encodeURIComponent("Hello! I would like to register for mathematics classes.");
                                 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-                                const whatsappUrl = isMobile 
+                                const whatsappUrl = isMobile
                                     ? `whatsapp://send?phone=94771415855&text=${message}`
                                     : `https://wa.me/94771415855?text=${message}`;
                                 window.open(whatsappUrl, '_blank');
