@@ -9,7 +9,12 @@ function Navbar() {
 
     const toggleMenu = () => setIsOpen(!isOpen)
 
-    const isActive = (path) => location.pathname === path
+    const isActive = (path) => {
+        if (path === '/') {
+            return location.pathname === '/' && !location.hash
+        }
+        return location.pathname === path
+    }
 
     return (
         <nav className="navbar">
@@ -17,19 +22,25 @@ function Navbar() {
                 <div className="nav-wrapper">
                     <Link to="/" className="logo">
                         <img src="/favicon.svg" alt="Logo" className="logo-icon" />
-                        <span className="logo-text"><span className="logo-highlight">A+ Maths</span> <span style={{ color: 'var(--light-gray)' }}>with</span> නිමන්ත මධුෂාන්</span>
+                        <span className="logo-text"><span className="logo-highlight">A+</span> Maths <span style={{ color: 'var(--light-gray)' }}>with</span> <img src="/images/name.jpg" alt="Nimantha Madhushan" className="name-image" /></span>
                     </Link>
 
                     <div className={`nav-links ${isOpen ? 'active' : ''}`}>
                         <Link
                             to="/"
                             className={`nav-link ${isActive('/') ? 'active' : ''}`}
-                            onClick={() => setIsOpen(false)}
+                            onClick={(e) => {
+                                setIsOpen(false);
+                                if (location.pathname === '/') {
+                                    e.preventDefault();
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }}
                         >
                             Home
                         </Link>
-                        <a
-                            href="#classes"
+                        <Link
+                            to="/#classes"
                             className="nav-link"
                             onClick={(e) => {
                                 setIsOpen(false);
@@ -40,7 +51,20 @@ function Navbar() {
                             }}
                         >
                             Classes
-                        </a>
+                        </Link>
+                        <Link
+                            to="/#projects"
+                            className="nav-link"
+                            onClick={(e) => {
+                                setIsOpen(false);
+                                if (location.pathname === '/') {
+                                    e.preventDefault();
+                                    document.querySelector('.projects-section')?.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                        >
+                            Projects
+                        </Link>
                         <Link
                             to="/contact"
                             className={`nav-link ${isActive('/contact') ? 'active' : ''}`}

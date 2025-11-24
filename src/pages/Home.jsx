@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { FaGraduationCap, FaBook, FaTrophy, FaUsers, FaChalkboardTeacher, FaClock, FaTimes, FaChevronLeft, FaChevronRight, FaCalendar, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaGraduationCap, FaBook, FaTrophy, FaUsers, FaChalkboardTeacher, FaClock, FaTimes, FaChevronLeft, FaChevronRight, FaCalendar, FaMapMarkerAlt, FaWhatsapp, FaHome, FaLaptop } from 'react-icons/fa'
 import './Home.css'
 
 function Home() {
@@ -82,6 +82,24 @@ function Home() {
         { grade: '10,11(O/L) සිංහල මාධ්‍ය' }
     ]
 
+    const classTypes = [
+        {
+            icon: <FaUsers />,
+            title: <>Individual / Group Classes<br />(තනි / කණ්ඩායම් පංති)</>,
+            description: 'Personalized one-on-one sessions or small group classes tailored to your learning pace and style.'
+        },
+        {
+            icon: <FaHome />,
+            title: <>Home Visit<br />(නිවසට පැමිණ ඉගැන්වීම)</>,
+            description: 'Convenient home tuition services available near Colombo and Gampaha districts for comfortable learning.'
+        },
+        {
+            icon: <FaLaptop />,
+            title: <>Online Classes<br />(මාර්ගගත ක්‍රමයට)</>,
+            description: 'Interactive online sessions accessible from anywhere in Sri Lanka with live teaching and support.'
+        }
+    ]
+
     const projects = [
         {
             title: 'O/L Mathematics Paper Discussion Seminar',
@@ -104,8 +122,8 @@ function Home() {
             description: 'Free mathematics seminar series for students in grade 10 & 11 at Deepangoda Sri Medananda College , helping them build strong foundations in mathematics.',
             image: '/images/seminar2-3.jpeg',
             type: 'Seminar - Volunteering',
-            date: 'June 10-12, 2024',
-            place: 'Gampaha Rural Schools',
+            date: 'February, 2025',
+            place: 'Deepangoda Sri Medananda College',
             fullDescription: 'With the collaboration of The exploration Club of University of Colombo School of Computing, successfully conducted a free mathematics seminar and paper discussion for the students of grade 10 & 11 at Deepangoda Sri Medananda College. The program focused on building strong mathematical foundations, boosting confidence, and making mathematics accessible to all.',
             images: [
                 '/images/seminar2.jpeg',
@@ -115,7 +133,7 @@ function Home() {
                 '/images/seminar2-5.jpeg'
             ]
         },
-       
+
     ]
 
     return (
@@ -130,16 +148,28 @@ function Home() {
                             <span className="hero-highlight"> Expert Guidance</span>
                             <span className=""> Grade 6 to 11</span>
                         </h1>
-                        <p className="hero-description">
-                            Professional mathematics tutoring for grades 6-11 (O/L).
-                            Build strong foundations, develop problem-solving skills, and achieve excellence.
-                        </p>
                         <p className="hero-sinhala">
+
                             එන්න,බය නැතුව ගණන් හදන්න.<br />
                             ලේසිම විෂය ලේසියෙන්ම ගොඩ දාගන්න!
+
+
+                        </p>
+                        <p className="hero-description ">
+                            Professional mathematics tutoring for grades 6-11 (O/L).<br />
+                            Build strong foundations, develop problem-solving skills, and achieve excellence.
                         </p>
                         <div className="hero-buttons">
-                            <a href="#classes" className="btn" onClick={(e) => {
+                            <a href="https://wa.me/94771415855?text=Hello!%20I%20would%20like%20to%20register%20for%20mathematics%20classes." target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" onClick={(e) => {
+                                e.preventDefault();
+                                const message = encodeURIComponent("Hello! I would like to register for mathematics classes.");
+                                const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                                const whatsappUrl = isMobile 
+                                    ? `whatsapp://send?phone=94771415855&text=${message}`
+                                    : `https://wa.me/94771415855?text=${message}`;
+                                window.open(whatsappUrl, '_blank');
+                            }}><FaWhatsapp /> Register Now</a>
+                            <a href="#classes" className="btn btn-outline" onClick={(e) => {
                                 e.preventDefault();
                                 document.getElementById('classes')?.scrollIntoView({ behavior: 'smooth' });
                             }}>Explore Classes</a>
@@ -216,11 +246,22 @@ function Home() {
                             </div>
                         ))}
                     </div>
+
+                    <h3 className="class-types-subtitle">Available Learning Options</h3>
+                    <div className="class-types-grid">
+                        {classTypes.map((classType, index) => (
+                            <div key={index} className="class-type-card card">
+                                <div className="class-type-icon">{classType.icon}</div>
+                                <h4 className="class-type-title">{classType.title}</h4>
+                                <p className="class-type-description">{classType.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Projects Section */}
-            <section className="section projects-section">
+            <section id="projects" className="section projects-section">
                 <div className="container">
                     <h2 className="section-title">Our Projects & Community Work</h2>
                     <p className="section-subtitle">Seminars, workshops, and volunteering initiatives to spread mathematical knowledge</p>

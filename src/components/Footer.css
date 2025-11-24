@@ -1,5 +1,5 @@
 .footer {
-    background: var(--secondary-black);
+    background: #000000;
     border-top: 2px solid var(--dark-gray);
     padding: 60px 0 20px;
     margin-top: 80px;
@@ -22,7 +22,7 @@
     align-items: center;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: var(--primary-orange);
     margin-bottom: 20px;
 }
 
@@ -37,10 +37,29 @@
     color: var(--text-white);
 }
 
+.logo-highlight {
+    color: var(--primary-orange);
+    font-family: 'Righteous', 'Impact', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+}
+
 .footer-description {
     color: var(--light-gray);
     line-height: 1.8;
     font-size: 0.95rem;
+}
+
+.name-image {
+    height: 35px;
+    width: auto;
+    vertical-align: middle;
+    margin-left: 6px;
+    border-radius: 4px;
+    mix-blend-mode: screen;
+    filter: brightness(1.2) contrast(1.1);
 }
 
 .footer-title {

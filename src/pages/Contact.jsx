@@ -21,44 +21,55 @@ function Contact() {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false)
-            setSubmitMessage('Thank you for your interest! We will contact you soon.')
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                grade: '',
-                message: ''
-            })
+        // Create mailto link with form data
+        const subject = encodeURIComponent(`New Contact Form - ${formData.name}`)
+        const body = encodeURIComponent(
+            `Name: ${formData.name}\n` +
+            `Email: ${formData.email}\n` +
+            `Phone: ${formData.phone}\n` +
+            `Grade: ${formData.grade}\n` +
+            `Message:\n${formData.message}`
+        )
 
-            setTimeout(() => setSubmitMessage(''), 5000)
-        }, 1500)
+        // Open email client
+        window.location.href = `mailto:nimantham.lk@gmail.com?subject=${subject}&body=${body}`
+
+        setIsSubmitting(false)
+        setSubmitMessage('Opening your email client... Please send the email to submit your message.')
+
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            grade: '',
+            message: ''
+        })
+
+        setTimeout(() => setSubmitMessage(''), 5000)
     }
 
     const contactInfo = [
         {
             icon: <FaPhone />,
             title: 'Phone',
-            content: '+94 XX XXX XXXX',
-            link: 'tel:+94XXXXXXXXX'
+            content: '+94 77 141 5855',
+            link: 'tel:+94771415855'
         },
         {
             icon: <FaWhatsapp />,
             title: 'WhatsApp',
-            content: '+94 XX XXX XXXX',
-            link: 'https://wa.me/94XXXXXXXXX'
+            content: '+94 77 141 5855',
+            link: 'https://wa.me/94771415855?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20mathematics%20classes.'
         },
         {
             icon: <FaEnvelope />,
             title: 'Email',
-            content: 'info@mathsweb.com',
-            link: 'mailto:info@mathsweb.com'
+            content: 'nimantham.lk@gmail.com',
+            link: 'mailto:nimantham.lk@gmail.com'
         },
         {
             icon: <FaMapMarkerAlt />,
@@ -66,12 +77,6 @@ function Contact() {
             content: 'Colombo, Sri Lanka',
             link: '#'
         }
-    ]
-
-    const officeHours = [
-        { day: 'Monday - Friday', time: '4:00 PM - 8:00 PM' },
-        { day: 'Saturday', time: '9:00 AM - 6:00 PM' },
-        { day: 'Sunday', time: '9:00 AM - 1:00 PM' }
     ]
 
     return (
@@ -201,30 +206,14 @@ function Contact() {
                                 ))}
                             </div>
 
-                            {/* Office Hours */}
-                            <div className="office-hours-card card">
-                                <div className="hours-header">
-                                    <FaClock className="hours-icon" />
-                                    <h3>Office Hours</h3>
-                                </div>
-                                <div className="hours-list">
-                                    {officeHours.map((schedule, index) => (
-                                        <div key={index} className="hour-item">
-                                            <span className="hour-day">{schedule.day}</span>
-                                            <span className="hour-time">{schedule.time}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
                             {/* Social Links */}
                             <div className="social-section">
                                 <h3>Connect With Us</h3>
                                 <div className="social-buttons">
-                                    <a href="#" className="social-btn facebook">
+                                    <a href="https://web.facebook.com/profile.php?id=100081032823126" target="_blank" rel="noopener noreferrer" className="social-btn facebook">
                                         <FaFacebook /> Facebook
                                     </a>
-                                    <a href="#" className="social-btn whatsapp">
+                                    <a href="https://wa.me/94771415855?text=Hello!%20I%20would%20like%20to%20inquire%20about%20mathematics%20classes." target="_blank" rel="noopener noreferrer" className="social-btn whatsapp">
                                         <FaWhatsapp /> WhatsApp
                                     </a>
                                 </div>
