@@ -7,7 +7,7 @@ function About() {
             icon: <FaGraduationCap />,
             title: 'Education',
             items: [
-                'Undergraduate - BSc (Hons) in Computer Science',
+                'Undergraduate - BSc in Computer Science',
                 'University of Colombo School of Computing'
             ]
         },
