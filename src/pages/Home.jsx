@@ -47,7 +47,7 @@ function Home() {
         {
             icon: <FaGraduationCap />,
             title: 'Expert Guidance',
-            description: 'Learn from experienced educators with proven track records in mathematics education.'
+            description: 'Learn from a experienced teacher with proven track records in mathematics education.'
         },
         {
             icon: <FaBook />,
@@ -107,7 +107,7 @@ function Home() {
             image: '/images/seminar1.jpeg',
             type: 'Seminar - Volunteering',
             date: 'November, 2025',
-            place: 'Magammana maha Vidyalaya, Homagama',
+            place: 'Magammana Maha Vidyalaya, Homagama',
             fullDescription: 'Collaborating with the Exploration Club of University of Colombo School of Computing, conducted a full-day comprehensive mathematics workshop designed specifically for O/L students in Grade 10 & 11 of Magammana Maha Vidyalaya, Homagama for preparing for their final examinations & term tests. The workshop covered advanced problem-solving techniques, time management strategies, and exam preparation tips with past papers discussion. Over 45 students participated and benefited from interactive sessions, practice problems, and one-on-one guidance from experienced mathematics educators.',
             images: [
                 '/images/seminar1.jpeg',
