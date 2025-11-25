@@ -40,6 +40,13 @@ function Navbar() {
                             Home
                         </Link>
                         <Link
+                            to="/about"
+                            className={`nav-link ${isActive('/about') ? 'active' : ''}`}
+                            onClick={() => setIsOpen(false)}
+                        >
+                            About
+                        </Link>
+                        <Link
                             to="/#classes"
                             className="nav-link"
                             onClick={(e) => {

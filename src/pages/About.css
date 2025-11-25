@@ -1,0 +1,408 @@
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
+    padding: 100px 0 60px;
+    text-align: center;
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+.about-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-orange);
+    font-weight: 600;
+}
+
+/* Profile Section */
+.profile-section {
+    background: var(--secondary-black);
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.profile-image-wrapper {
+    position: relative;
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 4px solid var(--primary-orange);
+    box-shadow: 0 20px 60px rgba(255, 102, 0, 0.3);
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-orange);
+    color: var(--text-white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4);
+}
+
+.profile-badge svg {
+    font-size: 1.3rem;
+}
+
+.profile-content {
+    padding-top: 20px;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.profile-title {
+    font-size: 1.3rem;
+    color: var(--primary-orange);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.profile-description p {
+    color: var(--text-light);
+    line-height: 1.9;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.about-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-points li {
+    color: var(--text-light);
+    padding: 20px 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    padding-left: 30px;
+}
+
+.about-points li:last-child {
+    border-bottom: none;
+}
+
+.about-points li:before {
+    content: '●';
+    color: var(--primary-orange);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.about-points li strong {
+    color: var(--text-white);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 1.1rem;
+}
+
+.sinhala-text {
+    color: var(--light-gray);
+    font-style: italic;
+    display: block;
+    line-height: 1.8;
+}
+
+/* Qualifications Section */
+.qualifications-section {
+    background: var(--primary-black);
+}
+
+.qualifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.qualification-card {
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.qualification-icon {
+    font-size: 3.5rem;
+    color: var(--primary-orange);
+    margin-bottom: 20px;
+}
+
+.qualification-title {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.qualification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.qualification-list li {
+    color: var(--text-light);
+    padding: 10px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.qualification-list li:last-child {
+    border-bottom: none;
+}
+
+.qualification-list li:before {
+    content: '✓';
+    color: var(--primary-orange);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Expertise Section */
+.expertise-section {
+    background: var(--secondary-black);
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.expertise-card {
+    text-align: center;
+    padding: 35px 25px;
+    transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+}
+
+.expertise-icon {
+    font-size: 3rem;
+    color: var(--primary-orange);
+    margin-bottom: 20px;
+}
+
+.expertise-title {
+    font-size: 1.4rem;
+    color: var(--text-white);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.expertise-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    background: var(--primary-black);
+}
+
+.philosophy-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.philosophy-text {
+    background: var(--secondary-black);
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-orange);
+}
+
+.philosophy-quote {
+    font-size: 1.3rem;
+    color: var(--text-white);
+    font-style: italic;
+    margin: 0 0 20px 0;
+    padding: 0;
+    line-height: 1.8;
+    position: relative;
+}
+
+.philosophy-quote:before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--primary-orange);
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    opacity: 0.3;
+}
+
+.quote-translation {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--light-gray);
+    margin-top: 15px;
+    font-style: normal;
+}
+
+.philosophy-text>p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.philosophy-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.philosophy-list li {
+    color: var(--text-light);
+    padding: 12px 0 12px 35px;
+    font-size: 1rem;
+    line-height: 1.7;
+    position: relative;
+}
+
+.philosophy-list li:before {
+    content: '→';
+    color: var(--primary-orange);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0.05) 100%);
+    border-top: 2px solid var(--dark-gray);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    color: var(--text-white);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .profile-image-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .page-title {
+        font-size: 2.3rem;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .qualifications-grid,
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 80px 0 40px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .profile-image-wrapper {
+        max-width: 300px;
+    }
+
+    .profile-name {
+        font-size: 1.8rem;
+    }
+
+    .profile-title {
+        font-size: 1.1rem;
+    }
+
+    .philosophy-text {
+        padding: 25px;
+    }
+
+    .philosophy-quote {
+        font-size: 1.1rem;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+}
